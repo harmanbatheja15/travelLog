@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %} Edit Log {% endblock %}
+{% load static %}
+
+{% block content %}
+
+<div class="signin-main-container">
+    <div class="signin-wrapper">
+        <header class="login-cta">
+            <h2>Edit Log</h2>
+        </header>
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <div class="form-row">
+                {{logForm.title}}
+                <span>Title</span>
+            </div>
+            <div class="form-row">
+                {{logForm.location}}
+                <span>Location</span>
+            </div>
+            <div class="form-row">
+                {{logForm.date}}
+                <span>Date</span>
+            </div>
+            <div class="form-row">
+                <img src="{{logs.image.url}}" width="100%" alt="">
+            </div>
+            <div class="form-row">
+                {{logForm.image}}
+            </div>
+            <p style="color: #adafca; font-weight: 400; margin-left: 1em; pointer-events: none; user-select: none; font-weight: bold;">Description</p>
+            <div class="form-row">
+                {{logForm.media}}
+                {{logForm.description}}
+            </div>
+            <div class="form-row">
+                {{logForm.visibility}}
+                <span>Visibility</span>
+            </div>
+
+            <div class="form-row">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

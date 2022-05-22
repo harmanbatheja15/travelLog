@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} Upload Images {% endblock %}
+{% load static %}
+
+{% block content %}
+
+<div class="signin-main-container">
+    <div class="signin-wrapper">
+        <header class="login-cta">
+            <h2>Add Images</h2>
+        </header>
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {% for hidden in logForm.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+
+            {% for field in logForm %}
+            {{ field }}
+            {% endfor %}
+
+            {{ formset.management_form }}
+            {% for form in formset %}
+            <div class="form-row">
+                {{ form.image }}
+                <span>Image</span>
+            </div>
+            {% endfor %}
+
+            <div class="form-row">
+                <button type="submit">Upload Images</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

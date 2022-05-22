@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} Sign Up {% endblock %}
+{% load static %}
+
+{% block content %}
+
+<div class="signin-main-container">
+    <div class="signin-wrapper">
+        <header class="login-cta">
+            <h2>Sign Up</h2>
+        </header>
+        <form method="post">
+
+            {% csrf_token%}
+
+            {% for field in registration_form %}
+            
+            <div class="form-row">
+                {{field}}
+                <span>{{field.label_tag}}</span>
+            </div>
+            
+            {% for error in field.errors %}
+            <p style="color: red;">{{error}}</p>
+            {% endfor %}
+            
+            {% endfor %}
+
+            <div class="form-row">
+                <button type="submit">Sign Up</button>
+            </div>
+            <p>Already have an account? <a href="/signin" style="font-weight: 600;">Sign In</a></p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

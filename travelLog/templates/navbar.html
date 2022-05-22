@@ -1,0 +1,33 @@
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <h1 class="logo"><a href="/">TravelLog<span>.</span></a></h1>
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+        <nav id="navbar" class="navbar">
+            <ul>
+
+                <li><a {% if '/' == request.path %} class="nav-link scrollto active" {% else %} class="nav-link scrollto" {% endif %} href="/">Home</a></li>
+
+                <li><a {% if '/travelLogs/' == request.path %} class="nav-link scrollto active" {% else %} class="nav-link scrollto" {% endif %} href="/travelLogs">Travel Logs</a></li>
+
+                {% if request.user.is_authenticated %}
+
+                <li><a {% if '/dashboard/' == request.path %} class="nav-link scrollto active" {% else %} class="nav-link scrollto" {% endif %} href="/dashboard">Dashboard</a></li>
+
+                <li><a href="/signout" class="nav-link scrollto">Sign Out</a></li>
+
+                {% else %}
+
+                <li><a {% if '/signin/' == request.path %} class="nav-link scrollto active" {% else %} class="nav-link scrollto" {% endif %} href="/signin">Sign In</a></li>
+
+                {% endif %}
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+    </div>
+</header>
+<!-- End Header -->

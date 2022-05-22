@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Travel Logs {% endblock %}
+{% load static %}
+
+{% block content %}
+
+<section>
+
+    <!-- ======= Cards Section ======= -->
+    <div id="cards_wrappper">
+        <div class="container">
+            <div class="row">
+                {% for publicLog in publicLogs %}
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <a href="/travelLogs/detail/{{publicLog.id}}/">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="{{ publicLog.image.url }}" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>{{publicLog.title}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Cards End -->
+
+</section>
+
+{% endblock %}

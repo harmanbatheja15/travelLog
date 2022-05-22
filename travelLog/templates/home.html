@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% load static %}
+
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <h1>Welcome to <span>TravelLog</span></h1>
+        <h2>Relive your memories. <br> Experience the future.</h2>
+        {% if request.user.is_authenticated %}
+        <div class="d-flex">
+            <a href="/addLog" class="btn-signup scrollto">Start your own diary</a>
+        </div>
+        {% else %}
+        <div class="d-flex">
+            <a href="/signup" class="btn-signup scrollto">Start your own diary</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+<!-- End Hero -->
+
+<main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About</h2>
+                <h3>Find Out More <span>About Us</span></h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure rerum, harum distinctio cupiditate
+                    maiores in! Consectetur, accusamus voluptatum.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <img src="{% static 'images/about.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, laboriosam.</h3>
+                    <p class="fst-italic">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                    <ul>
+                        <li>
+                            <i class="bx bx-store-alt"></i>
+                            <div>
+                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, unde iusto odio in
+                                    magni maxime!</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bx bx-images"></i>
+                            <div>
+                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, unde iusto odio in
+                                    magni maxime!</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quaerat dolorem dolore
+                        exercitationem autem tempora, possimus saepe at pariatur quam vero sint aspernatur blanditiis
+                        nulla aliquid dignissimos vitae est similique iure fugiat totam veniam! Odit?
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- ======= Timeline ======= -->
+    <div class="container mt-5 mb-5">
+        <ul class="timeline">
+            <li>
+                <div class="timeline-badge info"></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">Tell your story</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p>Easily add stories to your diary in our online editor or app, which have been designed to look like an actual book. Choose from numerous fonts and styles to design your travel diary according to your own taste.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-badge warning"></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">Add photos</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, aliquid autem. Vero explicabo soluta quaerat, voluptatum iste, repellendus expedita, earum deleniti inventore perferendis minima vitae!
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-badge danger"></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">Share your diary</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p>You choose which - if any - of your chapters you'd like to share with friends and family. Once you share them, they are automatically converted into an online travel blog that you can share with the world.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Timeline End -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+        <div class="container" data-aos="zoom-in">
+    
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+    
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{% static 'images/user.png' %}" class="testimonial-img" alt="">
+                            <h3>Saul Goodman</h3>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
+                                rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
+                                risus at semper.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+    
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{% static 'images/user.png' %}" class="testimonial-img" alt="">
+                            <h3>Sara Wilsson</h3>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
+                                cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
+                                legam anim culpa.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+    
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{% static 'images/user.png' %}" class="testimonial-img" alt="">
+                            <h3>Jena Karlis</h3>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
+                                veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
+                                minim.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+    
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{% static 'images/user.png' %}" class="testimonial-img" alt="">
+                            <h3>Matt Brandon</h3>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
+                                fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
+                                dolore labore illum veniam.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+    
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src="{% static 'images/user.png' %}" class="testimonial-img" alt="">
+                            <h3>John Larson</h3>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
+                                veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
+                                culpa fore nisi cillum quid.
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+    
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+    
+        </div>
+    </section>
+    <!-- End Testimonials Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Contact</h2>
+                <h3><span>Contact Us</span></h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, a iusto! Ut, repellendus excepturi?</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="info-box mb-4">
+                        <i class="bx bx-map"></i>
+                        <h3>Our Address</h3>
+                        <p>A108 Adam Street, New York, NY 535022</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box">
+                        <i class="bx bx-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>contact@example.com</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box">
+                        <i class="bx bx-phone-call"></i>
+                        <h3>Call Us</h3>
+                        <p>+91 9999999999</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-6 ">
+                    <iframe class="mb-4 mb-lg-0"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                        frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                </div>
+
+                <div class="col-lg-6">
+                    
+                    <form action="" method="post" role="form" class="django-email-form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col form-group">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Name"
+                                    required>
+                            </div>
+                            <div class="col form-group">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="phone" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" name="message" id="message" placeholder="Message"
+                                required></textarea>
+                        </div>
+                        <div class="text-center"><button type="submit">Send Message</button></div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+</main>
+<!-- End Main -->
+
+{% endblock %}
